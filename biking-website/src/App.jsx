@@ -4,14 +4,12 @@ import Navigation from './components/Navigation';
 import UpcomingRides from './pages/UpcomingRides';
 import PreviousRides from './pages/PreviousRides';
 import Contact from './pages/Contact';
-import ResponsiveTest from './components/ResponsiveTest';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        
         <Navigation />
         <main className="main-content">
           <Routes>

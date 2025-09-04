@@ -1,190 +1,144 @@
-# 🚴 Biking Website - Group Ride Planning
+# Travel Like AP - Biking Website
 
-A modern, responsive website for planning and organizing group biking rides, inspired by the Travel Like AP website design.
+A modern, responsive website for a biking adventure company built with React and Vite.
 
-## ✨ Features
+## Features
 
-### 🎯 **Three Main Pages**
-- **Upcoming Rides** (`/`) - Hero section with upcoming group rides
-- **Previous Rides** (`/previous`) - Past rides with statistics and galleries
-- **Contact** (`/contact`) - Contact form and information
+- **Responsive Design**: Mobile-first approach with modern CSS Grid and Flexbox
+- **Navigation**: Sticky navigation with dropdown menus and mobile hamburger menu
+- **Pages**: 
+  - Home/Upcoming Rides with hero section
+  - Previous Rides with statistics
+  - Contact page with form and company information
+- **Modern UI**: Clean design with CSS variables for consistent theming
+- **Performance**: Optimized with Vite for fast development and building
 
-### 📱 **Fully Responsive Design**
-- **Mobile-First Approach** - Optimized for all device sizes
-- **Dynamic Breakpoints** - Automatically adapts to screen dimensions
-- **Flexible Grid System** - Cards and layouts adjust seamlessly
-- **Touch-Friendly Interface** - Optimized for mobile devices
+## Tech Stack
 
-## 🎨 **Responsive Breakpoints**
+- **Frontend**: React 19.1.1
+- **Build Tool**: Vite 7.1.2
+- **Routing**: React Router DOM 7.8.2
+- **Styling**: CSS3 with CSS Variables and modern features
+- **Responsive**: Mobile-first CSS with media queries
 
-| Device | Width Range | Layout | Features |
-|--------|-------------|---------|----------|
-| **Mobile (Small)** | < 480px | Single column | Stacked navigation, full-width cards |
-| **Mobile (Large)** | 481px - 767px | Single column | Horizontal navigation, optimized spacing |
-| **Tablet** | 768px - 1023px | Two columns | Side-by-side contact layout |
-| **Desktop** | 1024px - 1199px | Multi-column | Full grid layout, enhanced spacing |
-| **Large Desktop** | ≥ 1200px | Maximum width | Optimal viewing experience |
+## Getting Started
 
-## 🚀 **CSS Features**
+### Prerequisites
 
-### **CSS Variables & Theming**
-```css
-:root {
-  --primary-color: #ff6b35;
-  --mobile: 480px;
-  --tablet: 768px;
-  --desktop: 1024px;
-  --large-desktop: 1200px;
-}
-```
+- Node.js (version 18 or higher)
+- npm or yarn
 
-### **Fluid Typography**
-```css
-.hero-title {
-  font-size: clamp(2rem, 8vw, 3.5rem);
-}
-```
+### Installation
 
-### **Responsive Spacing**
-```css
-.rides-section {
-  padding: 0 1rem clamp(2rem, 5vw, 3rem);
-}
-```
+1. Clone the repository
+2. Navigate to the project directory:
+   ```bash
+   cd biking-website
+   ```
 
-### **Flexible Grid System**
-```css
-.rides-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
-}
-```
-
-## 🧪 **Testing Responsiveness**
-
-### **Development Server**
-```bash
-cd biking-website
-npm run dev
-```
-
-### **Browser Testing**
-1. **Open DevTools** (F12)
-2. **Toggle Device Toolbar** (Ctrl+Shift+M)
-3. **Test Different Devices**:
-   - iPhone SE (375px)
-   - iPhone 12 Pro (390px)
-   - iPad (768px)
-   - Desktop (1024px+)
-
-### **Responsive Test Component**
-The website includes a temporary responsive test component (top-right corner) showing:
-- Current screen dimensions
-- Active breakpoint
-- Real-time updates on resize
-
-## 📱 **Mobile Optimizations**
-
-- **Touch-Friendly Buttons** - Minimum 44px touch targets
-- **Optimized Typography** - Readable on small screens
-- **Efficient Navigation** - Collapsible menu for mobile
-- **Fast Loading** - Optimized images and minimal CSS
-
-## 🖥️ **Desktop Enhancements**
-
-- **Hover Effects** - Interactive card animations
-- **Enhanced Spacing** - Comfortable reading experience
-- **Multi-Column Layouts** - Efficient use of screen space
-- **Smooth Transitions** - Professional animations
-
-## 🎯 **Accessibility Features**
-
-- **High Contrast Mode** - Respects user preferences
-- **Reduced Motion** - Accommodates motion sensitivity
-- **Semantic HTML** - Screen reader friendly
-- **Keyboard Navigation** - Full keyboard support
-
-## 🖨️ **Print Styles**
-
-- **Clean Layout** - Optimized for printing
-- **Hidden Elements** - Navigation and buttons hidden
-- **Card Layouts** - Preserved for documentation
-
-## 🛠️ **Technical Stack**
-
-- **React 19** - Modern React with hooks
-- **React Router** - Client-side routing
-- **CSS3** - Advanced responsive features
-- **Vite** - Fast development server
-
-## 📁 **Project Structure**
-
-```
-src/
-├── components/
-│   ├── Navigation.jsx
-│   └── ResponsiveTest.jsx
-├── pages/
-│   ├── UpcomingRides.jsx
-│   ├── PreviousRides.jsx
-│   └── Contact.jsx
-├── App.jsx
-├── App.css
-└── main.jsx
-```
-
-## 🚀 **Getting Started**
-
-1. **Install Dependencies**
+3. Install dependencies:
    ```bash
    npm install
    ```
 
-2. **Start Development Server**
+4. Start the development server:
    ```bash
    npm run dev
    ```
 
-3. **View in Browser**
-   - Open `http://localhost:5173`
-   - Test responsiveness using browser DevTools
-   - Resize window to see dynamic changes
+5. Open your browser and visit `http://localhost:5173`
 
-## 🎨 **Customization**
+### Available Scripts
 
-### **Colors**
-Update CSS variables in `:root` for consistent theming:
-```css
-:root {
-  --primary-color: #your-color;
-  --accent-color: #your-accent;
-}
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── Navigation.jsx          # Main navigation component
+├── pages/
+│   ├── UpcomingRides.jsx       # Home page with hero section
+│   ├── PreviousRides.jsx       # Past rides and statistics
+│   └── Contact.jsx             # Contact form and company info
+├── assets/
+│   └── logo.png                # Company logo
+├── App.jsx                     # Main app component with routing
+├── App.css                     # Main stylesheet
+└── main.jsx                    # App entry point
 ```
 
-### **Breakpoints**
-Modify responsive breakpoints:
-```css
-:root {
-  --mobile: 480px;
-  --tablet: 768px;
-  --desktop: 1024px;
-}
-```
+## Design System
 
-## 📱 **Browser Support**
+### Colors
+- **Primary**: #ff6b35 (Orange)
+- **Secondary**: #1a1a1a (Dark)
+- **Accent**: #ffd700 (Gold)
+- **Background**: #f8f9fa (Light Gray)
 
-- **Chrome** 90+
-- **Firefox** 88+
-- **Safari** 14+
-- **Edge** 90+
-- **Mobile browsers** (iOS Safari, Chrome Mobile)
+### Typography
+- **Font Family**: System fonts with fallbacks
+- **Responsive**: Uses clamp() for fluid typography
+- **Hierarchy**: Clear heading structure with proper contrast
 
-## 🔧 **Performance Features**
+### Components
+- **Cards**: Consistent ride cards with hover effects
+- **Buttons**: Primary and secondary button styles
+- **Forms**: Clean form inputs with focus states
+- **Navigation**: Sticky navigation with mobile support
 
-- **CSS Variables** - Efficient theming
-- **Clamp() Functions** - Fluid responsive values
-- **Optimized Transitions** - Smooth animations
-- **Efficient Grid** - CSS Grid for layouts
+## Responsive Breakpoints
 
----
+- **Mobile**: < 480px
+- **Tablet**: 768px - 1023px
+- **Desktop**: 1024px - 1199px
+- **Large Desktop**: ≥ 1200px
 
-**Built with ❤️ using modern web technologies for the best responsive experience across all devices.**
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- CSS Grid and Flexbox support required
+
+## Development
+
+### CSS Architecture
+- CSS Variables for consistent theming
+- Mobile-first responsive design
+- BEM-like naming conventions
+- Modular component styles
+
+### Component Structure
+- Functional components with hooks
+- Props for data passing
+- Consistent file organization
+- Reusable component patterns
+
+## Deployment
+
+The project builds to a `dist/` folder that can be deployed to any static hosting service:
+
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3
+- Any web server
+
+## Contributing
+
+1. Follow the existing code style
+2. Test on multiple devices and screen sizes
+3. Ensure accessibility standards are met
+4. Update documentation as needed
+
+## License
+
+This project is private and proprietary to Travel Like AP.
+
+## Contact
+
+For questions about this project, contact the development team.
