@@ -48,11 +48,7 @@ const UpcomingRides = () => {
           </div>
           <h1 className="hero-title">LOSE YOURSELF</h1>
           <h2 className="hero-subtitle">DISCOVER YOURSELF</h2>
-          <h3 className="hero-tagline">Bike Like A Pro</h3>
-          <div className="hero-cta">
-            <button className="hero-btn primary">Book Your Next Adventure</button>
-            <button className="hero-btn secondary">Explore Routes</button>
-          </div>
+          <h3 className="hero-tagline">Travel Like A Pro</h3>
         </div>
       </div>
 

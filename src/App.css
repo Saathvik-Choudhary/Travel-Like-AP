@@ -7,7 +7,7 @@
    ========================================================================== */
 :root {
   /* Color Palette */
-  --primary-color: #ff6b35;        /* Main brand color - Orange */
+  --primary-color: #0165bd;      /* #ff6b35;        Main brand color - Orange */
   --primary-hover: #e55a2b;        /* Primary color hover state */
   --secondary-color: #1a1a1a;      /* Dark secondary color */
   --accent-color: #ffd700;         /* Accent color - Gold */
@@ -89,13 +89,12 @@ body {
 
 /* Main Navigation Bar */
 .navigation {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-primary);
   padding: 1rem 0;
   box-shadow: var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 10%;
   width: 100%;
 }
 
@@ -134,8 +133,8 @@ body {
 }
 
 .nav-logo {
-  width: clamp(40px, 8vw, 50px);
-  height: clamp(40px, 8vw, 50px);
+  width: clamp(40px, 24vw, 50px);
+  height: clamp(40px, 12vw, 50px);
   margin-right: clamp(0.5rem, 2vw, 1rem);
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
@@ -369,8 +368,7 @@ body {
    ========================================================================== */
 .hero-section {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
