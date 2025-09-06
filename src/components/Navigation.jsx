@@ -6,14 +6,14 @@ import title from '../assets/title.jpeg';
 const Navigation = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  // const [activeDropdown, setActiveDropdown] = useState(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const handleDropdownToggle = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  };
+  // const handleDropdownToggle = (dropdown) => {
+  //   setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  // };
 
   return (
     <nav className="navigation">

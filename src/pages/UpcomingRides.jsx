@@ -88,7 +88,7 @@ const UpcomingRides = () => {
       {/* Auto-Scrolling Hero Section */}
       <div className="hero-carousel">
         <div className="hero-slides" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-          {heroSlides.map((slide, index) => (
+          {heroSlides.map((slide) => (
             <div key={slide.id} className="hero-slide">
               <div 
                 className="hero-background" 
