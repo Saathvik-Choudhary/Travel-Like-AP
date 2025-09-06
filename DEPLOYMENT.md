@@ -13,11 +13,12 @@ This document explains how to set up automatic deployment of your Biking Website
 
 ### 1. Enable GitHub Pages in Repository Settings
 
-1. Go to your GitHub repository
+1. Go to your GitHub repository: https://github.com/Saathvik-Choudhary/Travel-Like-AP
 2. Click on **Settings** tab
 3. Scroll down to **Pages** section in the left sidebar
-4. Under **Source**, select **GitHub Actions**
-5. Save the settings
+4. Under **Source**, select **Deploy from a branch**
+5. Choose **gh-pages** branch and **/ (root)** folder
+6. Click **Save**
 
 ### 2. Repository Permissions
 
@@ -41,7 +42,7 @@ git push origin saathvik
 
 1. Go to the **Actions** tab in your GitHub repository
 2. You'll see the "Deploy to GitHub Pages" workflow running
-3. Once completed, your site will be available at: `https://[your-username].github.io/[repository-name]`
+3. Once completed, your site will be available at: `https://saathvik-choudhary.github.io/Travel-Like-AP/`
 
 ## How It Works
 
