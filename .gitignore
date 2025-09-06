@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large backup files
+*_backup.png
+*_original_backup.png
