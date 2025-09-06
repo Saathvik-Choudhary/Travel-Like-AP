@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Footer } from '../components';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -79,17 +80,32 @@ const Contact = () => {
             <h3>Follow Our Adventures</h3>
             <p>Stay updated with our latest rides and community events</p>
             <div className="social-icons">
-              <a href="#" className="social-link instagram">
+              <a 
+                href="https://www.instagram.com/travellikeap/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link instagram"
+              >
                 <span className="social-icon">📸</span>
                 Instagram
               </a>
-              <a href="#" className="social-link whatsapp">
+              <a 
+                href="https://www.youtube.com/@travellikeap" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link youtube"
+              >
+                <span className="social-icon">📺</span>
+                YouTube
+              </a>
+              <a 
+                href="https://wa.me/919876543210" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="social-link whatsapp"
+              >
                 <span className="social-icon">💬</span>
                 WhatsApp
-              </a>
-              <a href="#" className="social-link facebook">
-                <span className="social-icon">👍</span>
-                Facebook
               </a>
             </div>
           </div>
@@ -109,6 +125,16 @@ const Contact = () => {
           <div className="form-header">
             <h2>Send us a Message</h2>
             <p>Tell us about your interest in our rides or ask any questions</p>
+            <div className="form-link-container">
+              <a 
+                href="https://docs.google.com/forms/d/1H2ZRxI1cqRVBWSbnCFSZG_gqVc2BBXQANjL3MVMBtto/viewform?edit_requested=true" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="google-form-link"
+              >
+                Fill Out Our Community Form
+              </a>
+            </div>
           </div>
           
           <form onSubmit={handleSubmit} className="contact-form">
@@ -184,6 +210,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

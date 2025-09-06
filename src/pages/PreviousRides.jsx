@@ -1,4 +1,5 @@
 import React from 'react';
+import { Footer } from '../components';
 
 const PreviousRides = () => {
   const previousRides = [
@@ -10,7 +11,6 @@ const PreviousRides = () => {
       description: "Explored the beautiful coffee plantations of Coorg with an amazing group of riders.",
       participants: 12,
       distance: "280 km",
-      difficulty: "Intermediate",
       duration: "2 Days"
     },
     {
@@ -21,7 +21,6 @@ const PreviousRides = () => {
       description: "Cultural ride through the historic city of Mysore with palace visits.",
       participants: 8,
       distance: "150 km",
-      difficulty: "Beginner",
       duration: "1 Day"
     },
     {
@@ -32,7 +31,6 @@ const PreviousRides = () => {
       description: "Challenging uphill ride to the beautiful hill station of Ooty.",
       participants: 15,
       distance: "320 km",
-      difficulty: "Advanced",
       duration: "3 Days"
     }
   ];
@@ -81,9 +79,6 @@ const PreviousRides = () => {
               <div className="ride-image">
                 <img src={ride.image} alt={ride.title} />
                 <div className="ride-badge">Completed</div>
-                <div className="ride-overlay">
-                  <div className="ride-difficulty">{ride.difficulty}</div>
-                </div>
               </div>
               <div className="ride-content">
                 <div className="ride-meta">
@@ -119,6 +114,8 @@ const PreviousRides = () => {
           <button className="upload-btn">Upload Photos</button>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
