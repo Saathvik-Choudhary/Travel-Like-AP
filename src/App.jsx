@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import UpcomingRides from './pages/UpcomingRides';
 import PreviousRides from './pages/PreviousRides';
@@ -14,8 +14,10 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<UpcomingRides />} />
+            <Route path="/upcoming" element={<UpcomingRides />} />
             <Route path="/previous" element={<PreviousRides />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
       </div>
