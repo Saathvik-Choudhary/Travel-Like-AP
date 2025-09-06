@@ -6,25 +6,27 @@
    CSS VARIABLES & THEME CONFIGURATION
    ========================================================================== */
 :root {
-  /* Color Palette */
-  --primary-color: #0165bd;      /* #ff6b35;        Main brand color - Orange */
-  --primary-hover: #e55a2b;        /* Primary color hover state */
-  --secondary-color: #1a1a1a;      /* Dark secondary color */
-  --accent-color: #ffd700;         /* Accent color - Gold */
+  /* Color Palette - BMW Motorrad Inspired */
+  --primary-color: #0166B1;        /* BMW Blue - Main brand color */
+  --primary-hover: #004d8a;        /* Darker BMW Blue for hover state */
+  --button-hover: #e65100;         /* Orange color for button hover state */
+  --secondary-color: #000000;      /* Pure black - BMW style */
+  --accent-color: #6F6F6F;         /* BMW Gray - Accent color */
   
-  /* Text Colors */
-  --text-primary: #1a1a1a;         /* Main text color */
-  --text-secondary: #666;           /* Secondary text color */
-  --text-light: #ccc;               /* Light text color */
+  /* Text Colors - BMW Motorrad Inspired */
+  --text-primary: #ffffff;          /* Pure white - BMW style main text */
+  --text-secondary: #6F6F6F;        /* BMW Gray - Secondary text color */
+  --text-light: #cccccc;            /* Light gray - BMW style light text */
   
-  /* Background Colors */
-  --bg-primary: #f8f9fa;           /* Main background color */
-  --bg-secondary: #fff;             /* Secondary background color */
-  --bg-dark: #1a1a1a;               /* Dark background color */
+  /* Background Colors - BMW Motorrad Inspired */
+  --bg-primary: #000000;           /* Pure black - BMW style main background */
+  --bg-secondary: #1a1a1a;         /* Dark gray - BMW style secondary background */
+  --bg-dark: #2a2a2a;              /* Medium dark gray - BMW style contrast background */
+  --bg-nav: #ffffff;               /* White - Navigation bar background */
   
-  /* Visual Effects */
-  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);      /* Subtle shadow */
-  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);    /* Medium shadow */
+  /* Visual Effects - BMW Motorrad Inspired */
+  --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.5);      /* BMW style shadow - Deep and sophisticated */
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.6);     /* BMW style medium shadow - Premium depth */
   --border-radius: 12px;            /* Default border radius */
   --transition: all 0.3s ease;      /* Default transition */
   
@@ -89,23 +91,32 @@ body {
 
 /* Main Navigation Bar */
 .navigation {
-  background-color: var(--bg-primary);
-  padding: 1rem 0;
+  background-color: var(--bg-nav);
+  padding: 0.3rem 0;
   box-shadow: var(--shadow-light);
   position: sticky;
   top: 0;
   z-index: 1000;
   width: 100%;
+  height: auto;
+  min-height: fit-content;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
-  max-width: var(--large-desktop);
-  margin: 0 auto;
-  padding: 0 1rem;
+  width: 100%;
+  height: auto;
+  min-height: fit-content;
+  padding: 0 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.nav-container > * {
+  flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
@@ -124,27 +135,58 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--bg-secondary);
+  color: var(--bg-primary);
   transition: var(--transition);
 }
 
 .logo-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
+
+
 .nav-logo {
-  width: clamp(40px, 24vw, 50px);
-  height: clamp(40px, 12vw, 50px);
-  margin-right: clamp(0.5rem, 2vw, 1rem);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  width: clamp(57px, 7.6vw, 76px);
+  height: clamp(57px, 7.6vw, 76px);
+}
+
+.nav-title {
+  width: clamp(95px, 14.25vw, 142.5px);
+  height: clamp(38px, 5.7vw, 57px);
+  object-fit: contain;
 }
 
 .brand-text {
   font-size: clamp(1.2rem, 4vw, 1.8rem);
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 1px;
   white-space: nowrap;
-  color: var(--bg-secondary);
+  color: var(--bg-primary);
+}
+
+/* End Biking Group Image */
+.nav-end-image {
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+}
+
+.biking-group-img {
+  width: 100%;
+  height: clamp(40px, 5vw, 60px);
+  object-fit: cover;
+  max-width: 200px;
+}
+
+@media (max-width: 767px) {
+  .nav-end-image {
+    display: none;
+  }
+}
+
+/* Hide end image when mobile menu is open */
+.navigation:has(.nav-links.open) .nav-end-image {
+  display: none;
 }
 
 /* Mobile Menu Button */
@@ -168,7 +210,7 @@ body {
   display: block;
   width: 25px;
   height: 3px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   position: relative;
   transition: var(--transition);
 }
@@ -179,7 +221,7 @@ body {
   position: absolute;
   width: 25px;
   height: 3px;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   transition: var(--transition);
 }
 
@@ -214,14 +256,13 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-self: center;
-  width: 100%;
+  width: auto;
   margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
-    width: auto;
     margin-top: 0;
   }
 }
@@ -240,24 +281,24 @@ body {
 }
 
 .nav-links a {
-  color: var(--text-light);
+  color: var(--bg-primary);
   text-decoration: none;
   padding: 0.5rem clamp(0.5rem, 2vw, 1rem);
   border-radius: 4px;
   transition: var(--transition);
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   white-space: nowrap;
 }
 
 .nav-links a:hover {
-  color: var(--bg-secondary);
-  background-color: #333;
+  color: var(--bg-primary);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .nav-links .active a {
   color: var(--primary-color);
-  background-color: #333;
+  background-color: rgba(1, 102, 177, 0.2);
 }
 
 /* Dropdown Menu Styles */
@@ -268,11 +309,11 @@ body {
 .dropdown-toggle {
   background: none;
   border: none;
-  color: var(--text-light);
+  color: var(--bg-primary);
   padding: 0.5rem clamp(0.5rem, 2vw, 1rem);
   border-radius: 4px;
   transition: var(--transition);
-  font-weight: 500;
+  font-weight: 700;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   cursor: pointer;
   display: flex;
@@ -281,8 +322,8 @@ body {
 }
 
 .dropdown-toggle:hover {
-  color: var(--bg-secondary);
-  background-color: #333;
+  color: var(--bg-primary);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .dropdown-arrow {
@@ -324,14 +365,15 @@ body {
 .dropdown-menu a {
   display: block;
   padding: 0.75rem 1rem;
-  color: var(--text-light);
+  color: var(--bg-primary);
   text-decoration: none;
   transition: var(--transition);
+  font-weight: 600;
 }
 
 .dropdown-menu a:hover {
-  background-color: #333;
-  color: var(--bg-secondary);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--bg-primary);
 }
 
 /* Call-to-Action Button */
@@ -341,7 +383,7 @@ body {
 
 .book-ride-btn {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
@@ -351,7 +393,7 @@ body {
 }
 
 .book-ride-btn:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-2px);
 }
 
@@ -373,7 +415,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   overflow: hidden;
 }
 
@@ -383,7 +425,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0166B1 100%);
   z-index: 1;
 }
 
@@ -409,9 +451,15 @@ body {
 }
 
 .hero-logo-img {
-  width: 120px;
-  height: 120px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  width: clamp(180px, 20vw, 240px);
+  height: clamp(90px, 10vw, 120px);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+  transition: var(--transition);
+}
+
+.hero-logo-img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
 }
 
 .hero-title {
@@ -459,24 +507,24 @@ body {
 
 .hero-btn.primary {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .hero-btn.primary:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4);
 }
 
 .hero-btn.secondary {
   background: transparent;
-  color: var(--bg-secondary);
-  border: 2px solid var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
 }
 
 .hero-btn.secondary:hover {
-  background: var(--bg-secondary);
-  color: var(--bg-dark);
+  background: var(--text-primary);
+  color: var(--bg-primary);
   transform: translateY(-3px);
 }
 
@@ -484,9 +532,12 @@ body {
    FEATURED RIDE BANNER
    ========================================================================== */
 .featured-ride-banner {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   margin: 4rem 0;
   padding: 3rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
 .banner-content {
@@ -507,13 +558,13 @@ body {
 
 .banner-text h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
-  color: var(--text-secondary);
+  color: var(--bg-primary);
   margin-bottom: 0.5rem;
 }
 
 .banner-text h3 {
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--text-primary);
+  color: var(--bg-primary);
   margin-bottom: 1rem;
 }
 
@@ -526,7 +577,7 @@ body {
 
 .banner-btn {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   border: none;
   padding: 1rem 2rem;
   border-radius: 25px;
@@ -537,8 +588,9 @@ body {
 }
 
 .banner-btn:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4);
 }
 
 .banner-image img {
@@ -554,20 +606,61 @@ body {
    ========================================================================== */
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), #ffd700, var(--primary-color));
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(1, 102, 177, 0.5);
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(135deg, var(--primary-color) 0%, #ffd700 50%, var(--primary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 30px rgba(1, 102, 177, 0.3);
+  position: relative;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 10px rgba(1, 102, 177, 0.3));
+  }
+  100% {
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(1, 102, 177, 0.6));
+  }
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  max-width: 600px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--text-light);
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 500;
+  position: relative;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(1, 102, 177, 0.1) 0%, rgba(255, 215, 0, 0.1) 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(1, 102, 177, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
@@ -577,6 +670,18 @@ body {
   max-width: var(--large-desktop);
   margin: 0 auto;
   padding: 0 1rem clamp(2rem, 5vw, 3rem);
+  position: relative;
+}
+
+.rides-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, transparent 0%, rgba(1, 102, 177, 0.05) 50%, transparent 100%);
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
@@ -590,25 +695,39 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: clamp(1rem, 3vw, 2rem);
   margin-top: clamp(1rem, 3vw, 2rem);
+  position: relative;
+}
+
+.rides-grid::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  border-radius: 1px;
 }
 
 /* ==========================================================================
    RIDE CARDS COMPONENT
    ========================================================================== */
 .ride-card {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: var(--shadow-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   transition: var(--transition);
   height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .ride-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Ride Card Image */
@@ -639,12 +758,13 @@ body {
 
 .ride-difficulty {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(1, 102, 177, 0.3);
 }
 
 .ride-badge {
@@ -652,12 +772,13 @@ body {
   top: 1rem;
   left: 1rem;
   background: var(--accent-color);
-  color: var(--bg-dark);
+  color: var(--text-primary);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(111, 111, 111, 0.3);
 }
 
 /* Ride Card Content */
@@ -676,18 +797,19 @@ body {
 
 .ride-duration,
 .ride-distance {
-  background: var(--bg-primary);
-  color: var(--text-secondary);
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
+  border: 1px solid rgba(1, 102, 177, 0.2);
 }
 
 .ride-title {
   font-size: clamp(1.1rem, 3vw, 1.3rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--bg-primary);
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -712,11 +834,13 @@ body {
 }
 
 .stat {
-  background: var(--bg-primary);
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: #2e7d32;
+  font-weight: 600;
+  border: 1px solid rgba(46, 125, 50, 0.2);
 }
 
 .ride-actions {
@@ -748,6 +872,7 @@ body {
   width: 100%;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   margin-top: auto;
+  box-shadow: 0 4px 15px rgba(1, 102, 177, 0.3);
 }
 
 .view-details-btn:hover,
@@ -755,16 +880,17 @@ body {
 .submit-btn:hover,
 .book-now-btn:hover,
 .share-ride-btn:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4);
 }
 
 /* ==========================================================================
    PAGE HEADERS
    ========================================================================== */
 .page-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: var(--bg-secondary);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0166B1 100%);
+  color: var(--text-primary);
   padding: 4rem 1rem;
   text-align: center;
 }
@@ -811,16 +937,17 @@ body {
 
 /* Contact Information Section */
 .contact-info-section {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   padding: 2rem;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .contact-header h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .contact-header p {
@@ -841,7 +968,7 @@ body {
 
 .contact-icon-wrapper {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -849,6 +976,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(1, 102, 177, 0.4);
 }
 
 .contact-icon {
@@ -857,7 +985,7 @@ body {
 
 .contact-info h3 {
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .contact-info p {
@@ -897,18 +1025,20 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  color: var(--primary-color);
   text-decoration: none;
   border-radius: 25px;
   transition: var(--transition);
-  border: 1px solid #e9ecef;
+  border: 1px solid rgba(1, 102, 177, 0.2);
+  font-weight: 600;
 }
 
 .social-link:hover {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 102, 177, 0.4);
 }
 
 /* Quick Links Section */
@@ -924,39 +1054,41 @@ body {
 }
 
 .quick-link {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  color: #e65100;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   transition: var(--transition);
-  border: 1px solid #e9ecef;
+  border: 1px solid rgba(230, 81, 0, 0.2);
 }
 
 .quick-link:hover {
-  background: var(--primary-color);
-  color: var(--bg-dark);
-  border-color: var(--primary-color);
+  background: #e65100;
+  color: #ffffff;
+  border-color: #e65100;
   transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3);
 }
 
 /* ==========================================================================
    CONTACT FORM STYLES
    ========================================================================== */
 .contact-form-section {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   padding: clamp(1.5rem, 4vw, 2rem);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .form-header h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .form-header p {
@@ -990,7 +1122,7 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  color: var(--bg-primary);
   font-weight: 600;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
@@ -999,18 +1131,19 @@ body {
 .form-group textarea {
   width: 100%;
   padding: clamp(0.6rem, 2vw, 0.8rem);
-  border: 2px solid #e9ecef;
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   transition: var(--transition);
-  background: var(--bg-secondary);
+  background: #ffffff;
+  color: var(--bg-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 0 0 3px rgba(1, 102, 177, 0.3);
 }
 
 .form-group textarea {
@@ -1030,14 +1163,16 @@ body {
 }
 
 .schedule-call-btn {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  color: var(--primary-color);
   border: 2px solid var(--primary-color);
+  font-weight: 600;
 }
 
 .schedule-call-btn:hover {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(1, 102, 177, 0.4);
 }
 
 /* ==========================================================================
@@ -1053,7 +1188,7 @@ body {
 .map-content h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .map-content p {
@@ -1062,12 +1197,13 @@ body {
 }
 
 .map-placeholder {
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   padding: 3rem;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   max-width: 500px;
   margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .map-icon {
@@ -1100,8 +1236,9 @@ body {
 .stat-number {
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 900;
-  color: var(--accent-color);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(1, 102, 177, 0.5);
 }
 
 .stat-label {
@@ -1135,7 +1272,7 @@ body {
 
 .upload-btn {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
   border: none;
   padding: 1rem 2rem;
   border-radius: 25px;
@@ -1146,16 +1283,17 @@ body {
 }
 
 .upload-btn:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4);
 }
 
 /* ==========================================================================
    CALL-TO-ACTION SECTION
    ========================================================================== */
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: var(--bg-secondary);
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0166B1 100%);
+  color: var(--text-primary);
   padding: 4rem 1rem;
   text-align: center;
   margin-top: 4rem;
@@ -1197,24 +1335,24 @@ body {
 
 .cta-btn.primary {
   background: var(--primary-color);
-  color: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .cta-btn.primary:hover {
-  background: var(--primary-hover);
+  background: var(--button-hover);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-medium);
+  box-shadow: 0 8px 25px rgba(230, 81, 0, 0.4);
 }
 
 .cta-btn.secondary {
   background: transparent;
-  color: var(--bg-secondary);
-  border: 2px solid var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
 }
 
 .cta-btn.secondary:hover {
-  background: var(--bg-secondary);
-  color: var(--bg-dark);
+  background: var(--text-primary);
+  color: var(--bg-primary);
   transform: translateY(-3px);
 }
 

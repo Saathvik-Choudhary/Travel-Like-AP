@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import title from '../assets/title.jpeg';
 
 const Navigation = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ const Navigation = () => {
         <div className="nav-brand">
           <Link to="/" className="logo-link" onClick={closeMenu}>
             <img src={logo} alt="Travel Like AP Logo" className="nav-logo" />
+            <img src={title} alt="Travel Like AP Title" className="nav-title" />
           </Link>
         </div>
 
@@ -43,6 +45,7 @@ const Navigation = () => {
           </li>
 
         </ul>
+
       </div>
     </nav>
   );
