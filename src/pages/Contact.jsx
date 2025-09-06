@@ -48,7 +48,7 @@ const Contact = () => {
               </div>
               <div className="contact-info">
                 <h3>Email</h3>
-                <p>info@bikelikeapro.com</p>
+                <p>info@travellikeap.com</p>
                 <span className="contact-note">We'll respond within 24 hours</span>
               </div>
             </div>
