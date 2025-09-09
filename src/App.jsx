@@ -4,6 +4,7 @@ import Navigation from './components/Navigation';
 import UpcomingRides from './pages/UpcomingRides';
 import PreviousRides from './pages/PreviousRides';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/upcoming" element={<UpcomingRides />} />
             <Route path="/previous" element={<PreviousRides />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin/*" element={<Admin />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
