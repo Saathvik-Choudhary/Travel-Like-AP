@@ -38,6 +38,13 @@ const Navigation = () => {
             <Link to="/contact" onClick={closeMenu}>Contact</Link>
           </li>
 
+          <li className="admin-link">
+            <Link to="/admin" onClick={closeMenu} className="admin-btn">
+              <span className="admin-icon">⚙️</span>
+              Admin
+            </Link>
+          </li>
+
         </ul>
 
       </div>

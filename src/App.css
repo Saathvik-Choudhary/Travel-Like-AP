@@ -315,6 +315,50 @@ body {
   background-color: var(--bg-cyan-light);
 }
 
+/* Admin Button Styles */
+.admin-link {
+  margin-left: 1rem;
+}
+
+.admin-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.admin-btn:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  color: white !important;
+}
+
+.admin-icon {
+  font-size: 1rem;
+}
+
+/* Mobile admin button adjustments */
+@media (max-width: 767px) {
+  .admin-link {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .admin-btn {
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
 /* Dropdown Menu Styles */
 .dropdown {
   position: relative;
