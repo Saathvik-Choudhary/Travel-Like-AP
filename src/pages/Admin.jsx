@@ -24,7 +24,7 @@ const AdminLayout = ({ children }) => {
 
   const isActive = (path) => {
     if (path === '/admin') {
-      return location.pathname === '/admin';
+      return location.pathname === '/admin' || location.pathname === '/admin/';
     }
     return location.pathname.startsWith(path);
   };
@@ -111,19 +111,17 @@ const Admin = () => {
   }
 
   return (
-    <Router>
-      <AdminLayout>
-        <Routes>
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/rides" element={<RideManagement />} />
-          <Route path="/admin/hero" element={<HeroManagement />} />
-          <Route path="/admin/contact" element={<ContactManagement />} />
-          <Route path="/admin/stats" element={<StatsManagement />} />
-          <Route path="/admin/login" element={<Navigate to="/admin" replace />} />
-          <Route path="*" element={<Navigate to="/admin" replace />} />
-        </Routes>
-      </AdminLayout>
-    </Router>
+    <AdminLayout>
+      <Routes>
+        <Route path="/" element={<AdminDashboard />} />
+        <Route path="/rides" element={<RideManagement />} />
+        <Route path="/hero" element={<HeroManagement />} />
+        <Route path="/contact" element={<ContactManagement />} />
+        <Route path="/stats" element={<StatsManagement />} />
+        <Route path="/login" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AdminLayout>
   );
 };
 
